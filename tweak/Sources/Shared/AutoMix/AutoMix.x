@@ -112,7 +112,7 @@ void SGAutoMixSetSeconds(NSInteger seconds) {
 }
 
 BOOL SGAutoMixAccountAllows(void) {
-    if (SGHidden(SGKeyFakePremium)) return YES;
+    if (NO) return YES;
     NSString *type = [sg_productState stringForKey:@"type"];
     return !type || [type isEqualToString:@"premium"];
 }

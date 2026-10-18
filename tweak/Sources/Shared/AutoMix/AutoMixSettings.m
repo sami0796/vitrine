@@ -26,7 +26,7 @@ UIViewController *SGAutoMixSettingsPage(void) {
         ^NSString *(double value) { return [NSString stringWithFormat:@"%ld s", lround(value)]; });
     blend.waitsOn = SGKeyAutoMix;
 
-    NSString *note = SGAutoMixAccountAllows() ? nil : @"AutoMix needs Premium, or Spoof Premium under Premium, ads & privacy.";
+    NSString *note = SGAutoMixAccountAllows() ? nil : @"AutoMix needs Premium.";
     return [[SGModPage alloc] initWithTitle:@"AutoMix" intro:nil sections:@[
         SGNotedSection(nil, @[toggle, style, blend], note),
     ] footer:nil];

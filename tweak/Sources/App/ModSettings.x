@@ -115,7 +115,7 @@ static UIViewController *modSettingsPage(void) {
             pageRow(@"Lock screen", @"lock.iphone", SGColorRGB(0x32ADE6), ^UIViewController *{ return SGLockScreenWidgetPage(); }),
             // Vibrations hook Spotify's own controls and its audio, so they answer under either look.
             pageRow(@"Vibrations", @"waveform", UIColor.systemGreenColor, ^UIViewController *{ return SGVibrationsSettingsPage(); }),
-            pageRow(@"Premium, ads & privacy", @"hand.raised.fill", UIColor.systemBlueColor, ^UIViewController *{ return SGAdsSettingsPage(); }),
+            pageRow(@"Ads & privacy", @"hand.raised.fill", UIColor.systemBlueColor, ^UIViewController *{ return SGAdsSettingsPage(); }),
         ]),
         SGSection(nil, @[
             pageRow(@"Labs", @"testtube.2", UIColor.systemGreenColor, ^UIViewController *{ return SGLabsPage(); }),

@@ -330,7 +330,7 @@ static UIStackView *noteLine(UIImageView *icon, UILabel *text) {
 
 // The three switches at the top of the Premium, ads & privacy page, which the No ads card sets together.
 static NSArray<NSString *> *adKeys(void) {
-    return @[SGKeyHideAds, SGKeyHideUpsells, SGKeyFakePremium];
+    return @[SGKeyHideAds, SGKeyHideUpsells];
 }
 
 static BOOL adFree(void) {
@@ -464,18 +464,16 @@ static BOOL adFree(void) {
     _ads.onTintColor = SGGreen();
     _ads.on = adFree();
     _adsCard = [[SGLookCard alloc] initWithSymbol:@"speaker.slash" title:@"No ads"
-                                         subtitle:@"No ads, no Premium upsells, and Premium spoofed." accessory:_ads];
+                                         subtitle:@"No ads and no Premium upsells." accessory:_ads];
     [_adsCard addTarget:self action:@selector(toggleAds) forControlEvents:UIControlEventTouchUpInside];
     _adsCard.isAccessibilityElement = YES;
     _adsCard.accessibilityLabel = @"No ads";
-    _adsCard.accessibilityHint = @"No ads, no Premium upsells, and Premium spoofed.";
+    _adsCard.accessibilityHint = @"No ads and no Premium upsells.";
     _adsCard.accessibilityValue = _ads.on ? @"On" : @"Off";
     if (@available(iOS 17.0, *)) _adsCard.accessibilityTraits = UIAccessibilityTraitToggleButton;
     else _adsCard.accessibilityTraits = UIAccessibilityTraitButton;
     UILabel *adsText = [UILabel new];
-    adsText.text = @"Three switches of Premium, ads & privacy, applied at the restart; off leaves each as it is. Spoof Premium is "
-                   @"untested and can end in a forced logout; a Premium account gains nothing from it. Offline, audio quality and "
-                   @"sessions stay the server's.";
+    adsText.text = @"Two switches of Ads & privacy, applied at the restart; off leaves each as it is.";
     UIStackView *adsNote = noteLine(SGSymbolView(@"info.circle.fill", 15, UIImageSymbolWeightSemibold, 22), adsText);
     adsNote.arrangedSubviews.firstObject.tintColor = SGGrey();
     adsNote.layoutMargins = UIEdgeInsetsMake(4, 4, 0, 4);

@@ -320,7 +320,7 @@ static NSURLRequest *unconditional(NSURLRequest *request) {
 
 %ctor {
     ads = SGHidden(SGKeyHideAds);
-    premium = SGHidden(SGKeyFakePremium);
+    premium = NO; // Spoof Premium removed in this build.
     if (!ads && !premium) return;
     started = NSDate.date;
     cacheLock = [NSObject new];

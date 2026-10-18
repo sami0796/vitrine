@@ -12,7 +12,7 @@
 %end
 
 %ctor {
-    if (!SGHidden(SGKeyFakePremium)) return;
+    if (YES) return;
     %init;
     SGRequireClasses(@[@"_TtC31Preferences_CorePreferencesImpl28SPTPreferencesImplementation"]);
 }

@@ -61,7 +61,7 @@ void SGShareDiagnostics(void) {
         UIDevice.currentDevice.systemVersion, machine.machine];
     [text appendFormat:@"look %@, hide ads %d, hide upsells %d, spoof premium %d, EeveeSpotify %d\n\n",
         SGRedesignedUIStored() ? @"redesign" : @"native", SGHidden(SGKeyHideAds), SGHidden(SGKeyHideUpsells),
-        SGHidden(SGKeyFakePremium), SGEeveeSpotifyInjected()];
+        0, SGEeveeSpotifyInjected()];
     [text appendString:@"== ads blocked (stopped of checked)\n"];
     for (NSString *label in SGAdBlockLabels()) {
         NSUInteger checked = SGAdBlockChecked(label);
